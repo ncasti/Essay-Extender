@@ -1,0 +1,11 @@
+ROADMAP
+1. Create form to input long text <textarea>.
+2. Submit that text.
+3. Transform the text. [Figure out how to use API]
+	A- Replace words with longer synonyms.
+	B- Replace words with whole definitions of words.
+4. Display the text.
+5. Editing the text.
+	A- User can edit the extended text, changing particular words for more appropriate/complex synonyms.
+	B- Adjust
+6. Style.
