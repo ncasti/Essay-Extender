@@ -13,7 +13,7 @@ end
 
 post '/' do  # grabbing stuff from the form
 	session[:essays] ||= []
-	output = params[:input].join(" ")
+	output = params[:input]
 	session[:essays].push(output)
 	erb :'index.html', :locals => {:essays => session[:essays]}
 end
