@@ -23,6 +23,9 @@ end
 post '/' do  # grabbing stuff from the form
 	session[:essays] ||= []
 	output = Dinosaurus.lookup(params[:input])
-	session[:essays].push(output)
-	erb :'index.html', :locals => {:essays => session[:essays]}
+	array = session[:essays].unshift(output.synonyms)
+	specific = array[0]
+	random = specific[rand(specific.length)]
+	random ||= params[:input]
+	erb :'index.html', :locals => {:essays => session[:essays], :random => random}
 end
