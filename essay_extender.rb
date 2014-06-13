@@ -16,13 +16,13 @@ end
 
 get '/' do
 	session[:essays] ||locals= []
-	newword = Dinosaurus.lookup('sun')
-	erb :'index.html', :locals => {:essays => session[:essays], :newword => newword}
+	# newword = Dinosaurus.lookup('sun')
+	erb :'index.html', :locals => {:essays => session[:essays]}
 end
 
 post '/' do  # grabbing stuff from the form
 	session[:essays] ||= []
-	output = params[:input]
+	output = Dinosaurus.lookup(params[:input])
 	session[:essays].push(output)
 	erb :'index.html', :locals => {:essays => session[:essays]}
 end
