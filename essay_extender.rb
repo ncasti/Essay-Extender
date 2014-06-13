@@ -7,13 +7,13 @@ configure do
 end
 
 get '/' do
-	sessions[:essays] ||= []
-	erb :index, :locals => {:essays => sessions[:essays]}
+	session[:essays] ||= []
+	erb :'index.html', :locals => {:essays => session[:essays]}
 end
 
 post '/' do  # grabbing stuff from the form
-	sessions[:essays] ||= []
+	session[:essays] ||= []
 	output = params[:input].join(" ")
-	sessions[:essays].push(output)
-	erb :index, :locals => {:essays => sessions[:essays]}
+	session[:essays].push(output)
+	erb :'index.html', :locals => {:essays => session[:essays]}
 end
