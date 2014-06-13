@@ -8,8 +8,9 @@ configure do
 	enable :sessions
 end
 
+
 Dinosaurus.configure do |config|
-	config.api_key = 'b833035f63713be4db827676274a8e96'
+	config.api_key = '98eb24a061cfcf3c760b2e8a908bebe3'
 end
 
 
