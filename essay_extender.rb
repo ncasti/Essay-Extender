@@ -41,10 +41,23 @@ def translate(text)
 	text_array.each do |word|
 		diff_words = []
 		output = Dinosaurus.lookup(word)
-		diff_words.push(output.synonyms)
+		if output.synonyms == []
+			diff_words.push([word])
+			
+		else
+			diff_words.push(output.synonyms)
+		end
 		new_words.push(diff_words[0][rand(diff_words[0].length)])
 	end
-
 	new_words.join(" ")
 
 end
+
+# arr = ["bad.", "good.", "ugly--"]
+
+# arr.each do |word|
+# 	old_word = word
+# 	word_just_chars = old_word.match('/[A-Za-z]/')[0]
+# 	result = my_method
+# 	final = old_word.sub(word_just_chars,result)
+# end
