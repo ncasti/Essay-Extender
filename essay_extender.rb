@@ -23,11 +23,28 @@ get '/' do
 	erb :'index.html', :locals => {:essays => session[:essays]}
 end
 
-post '/' do  # grabbing stuff from the form
-	output = Dinosaurus.lookup(params[:input])
-	array = session[:essays].unshift(output.synonyms)
-	specific = array[0]
-	random ||= params[:input]
-	random = specific[rand(specific.length)]
-	erb :'index.html', :locals => {:essays => session[:essays], :random => random}
+
+post '/' do 
+	translation = translate(params[:input])
+	session[:essays].unshift(translation)
+
+	erb :'index.html', :locals => {:essays => session[:essays], :translation => translation}
+end
+
+
+def translate(text)
+
+	text_array = text.split(" ")
+
+	new_words = []
+
+	text_array.each do |word|
+		diff_words = []
+		output = Dinosaurus.lookup(word)
+		diff_words.push(output.synonyms)
+		new_words.push(diff_words[0][rand(diff_words[0].length)])
+	end
+
+	new_words.join(" ")
+
 end
