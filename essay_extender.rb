@@ -20,15 +20,15 @@ end
 
 get '/' do
 	# newword = Dinosaurus.lookup('sun')
-	erb :'index.html', :locals => {:essays => session[:essays]}
+	erb :'index.html', :locals => {:essays => session[:essays], :translation => @translation}
 end
 
 
 post '/' do 
-	translation = translate(params[:input])
-	session[:essays].unshift(translation)
+	@translation = translate(params[:input])
+	session[:essays].unshift(@translation)
 
-	erb :'index.html', :locals => {:essays => session[:essays], :translation => translation}
+	erb :'index.html', :locals => {:essays => session[:essays], :translation => @translation}
 end
 
 
