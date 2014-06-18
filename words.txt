@@ -1,0 +1,18 @@
+WORDS WE DON’T WANT TO TRANSLATE
+I
+you
+him
+us
+her
+his
+the
+it
+to
+be
+what
+which
+who
+is
+was
+where
+why
