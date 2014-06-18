@@ -3,32 +3,35 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|PT+Sans+Caption|Cutive' rel='stylesheet' type='text/css'>
 
 </head>
 
 
 <body>
 	<div class="pure-g">
-		<div class="pure-u-1">
+		<div class="pure-u-1" id="header_bar">
 			<h1>Essay Extender</h1>
 		</div>
-	</div>
 
-	<div class="pure-g">
 		<div class="pure-u-1-2">
-		
-			<form method="post" action="/">
-				<textarea name="input" rows:"60" cols="70">Your essay goes here</textarea>
-				<input type="submit" name="button" value="Submit">
-			</form>
-
-			<h2>Welcome!</h2>
-			<p>Have you ever written an awesome essay but then realized it was too short? FRUSTRATING! Well we have a solution! The days you have to double-space your essay or increase the margins are over. To make your essay longer, protracted, drawn-out, far-reaching, outstretched, spread out and spun out, just paste it into the textfield below and click the "Submit" button.</p>
-
+			<div class="col_1">
+				<form method="post" action="/">
+					<textarea name="input" placeholder="Your essay here..."></textarea>
+					<input type="submit" name="button" value="Submit">
+				</form>
+			</div>
+			<div class="col_1" id="intro">
+				<h2>Welcome!</h2>
+				<p>Have you ever written an awesome essay but then realized it was too short? FRUSTRATING! Well we have a solution! The days you have to double-space your essay or increase the margins are over. To make your essay longer, protracted, drawn-out, far-reaching, outstretched, spread out and spun out, just paste it into the textfield below and click the "Submit" button.</p>
+			</div>
 		</div>
+
 		<div class="pure-u-1-2">
-		<h2>Result:</h2>
+			<div class="col_2">
+				<h3>Result:</h3>
 		 	<%= @translation %>
+		 	</div>
 		</div>
 	</div>
 </body>
