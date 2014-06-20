@@ -50,7 +50,7 @@ def translate(text)
 
 	text_array.each do |word|
 		diff_words = []
-		exceptions = ["i","am","a","an","as","you","him","us","he","she","they","we","sr","jr","ms","mr","mrs","her","his","the","it","to","be","what","which","who","is","was","where","why","in","on","at","are"]
+		exceptions = ["i","am","a","an","as","you","him","us","he","she","they","we","sr","jr","ms","mr","mrs","her","his","the","it","to","be","what","which","who","is","was","where","why","in","on","at","are", "not"]
 		symbolselector = word.tr('A-Za-z', '') #selecting symbols in words
 		wordnosymbol = word.delete symbolselector #deletes symbols from word and saves it in a variable
 
@@ -76,6 +76,7 @@ def translate(text)
 			end
 		#new_words.push(diff_words[0][rand(diff_words[0].length)])
 		new_words.push(pushing) #new thing i added
+
 
 		
 	end
