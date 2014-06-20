@@ -88,9 +88,20 @@ input[type=submit] {
 	margin-top:5px;
 	margin-right:35px;
 	background-color:white;
-	min-height:550px;
+	min-height:520px;
 	font-family:'PT Sans Caption', sans-serif;
 	border: 1px solid #EBEBE0;
 }
 
+#counter {
+	font-family:'PT Sans Caption', sans-serif;
+	color:#4C4C33;
+	font-size:14px;
+	text-align: right;
+	margin-right:35px;
+	margin-top:15px;
+	margin-bottom:15px;
+	text-transform:uppercase;
+	letter-spacing: 1px;
+}
 

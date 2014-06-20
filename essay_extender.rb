@@ -22,7 +22,8 @@ get '/' do
 	# newword = Dinosaurus.lookup('sun')
 	erb :'index.html', :locals => {:essays => session[:essays], 
 									:translation => @translation,
-									:input => @input}
+									:input => @input,
+									:chardiff => @chardiff}
 end
 
 
@@ -30,11 +31,14 @@ post '/' do
 	@input = params[:input]
 	@translation = translate(params[:input])
 	session[:essays].unshift(@translation)
-
+	@chardiff = @chardiff
 	erb :'index.html', :locals => {:essays => session[:essays], 
 									:translation => @translation,
-									:input => @input}
+									:input => @input,
+									:chardiff => @chardiff}
 end
+
+
 
 
 def translate(text)
@@ -99,7 +103,13 @@ def translate(text)
 		s[index] = s[index].upcase
 	end
 
-	s[0] = s[0].upcase
+	if s[0] == nil
+		s = "<i><p style='color:red;'> What are you doing? Try again. Jesus.</p></i>"
+	elsif s[0] != nil
+		s[0] = s[0].upcase
+		@chardiff = "You have successfully extended your essay by <b style='color:red; font-size:24px;'>" + (s.length - @input.length).to_s + "</b> characters."
+	end
+
 	s
 
 end
